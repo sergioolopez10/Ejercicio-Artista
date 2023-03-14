@@ -41,3 +41,20 @@ class Musico(Artista):
     def get_numerocanciones(self):
         return self.__numerocanciones
 
+
+    
+def nuevo_artista():
+    nombre = input("¿Qué nombre tiene el artista? ")
+    edad = input("¿Qué edad tiene el artista? ")
+    nombre_profesional = input("¿Qué nombre profesional tiene el artista? ")
+    estilo = input("¿Qué estilo tiene el artista? ")
+    pregunta = input("¿Es músico?: ")
+    if pregunta.lower() == "si":
+        numerocanciones = input("¿Cuántas canciones tiene el músico? ")
+        miMusico = Musico(numerocanciones, nombre, edad, nombre_profesional, estilo)
+        return miMusico
+    else:
+        miArtista = Artista(nombre, edad, nombre_profesional, estilo)
+        return miArtista
+
+
