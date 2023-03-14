@@ -58,3 +58,8 @@ def nuevo_artista():
         return miArtista
 
 
+
+def finalizar_programa():
+    print("El programa se ha finalizado")
+
+
