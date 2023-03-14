@@ -117,3 +117,21 @@ def eliminar_artista(lista_artistas, nombre_artista):
     print("No se encontró un artista con ese nombre.")
 
 
+def main():
+    lista_artistas = []
+
+    while True:
+        P=(input("Si desea añadir un artista:1. Si desea modificar un artista:2. Si desea eliminar un artista:3 Si desea finalizar el programa:4 "))
+        if P=="1":
+            nuevo_artista()
+        if P=="2":
+            modificar_artista(lista_artistas, nombre_artista)
+        if P=="3":
+            eliminar_artista(lista_artistas, nombre_artista)
+        if P=="4":
+            finalizar_programa()
+            break
+
+
+if __name__=='__main__':
+    main()
