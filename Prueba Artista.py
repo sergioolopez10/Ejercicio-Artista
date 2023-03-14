@@ -100,3 +100,20 @@ def modificar_artista(lista_artistas, nombre_artista):
     print("No se encontró un artista con ese nombre.")
 
 
+def eliminar_artista(lista_artistas, nombre_artista):
+    for i, artista in enumerate(lista_artistas):
+        if artista.get_nombre() == nombre_artista:
+            del lista_artistas[i]
+            print("Artista eliminado con éxito.")
+            print("Lista de artistas actualizada:")
+            for artista in lista_artistas:
+                if isinstance(artista, Musico):
+                    print(f"Nombre del músico: {artista.get_nombre()}, Edad del músico: {artista.get_edad()}, Nombre profesional del músico: {artista.get_nombre_profesional()}, Estilo del músico: {artista.get_estilo()}, Número de canciones que tiene: {artista.get_numerocanciones()}")
+                else:
+                    print(f"Nombre del artista: {artista.get_nombre()}, Edad del artista: {artista.get_edad()}, Nombre profesional del artista: {artista.get_nombre_profesional()}, Estilo del artista: {artista.get_estilo()}")
+
+            return
+
+    print("No se encontró un artista con ese nombre.")
+
+
