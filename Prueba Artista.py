@@ -44,19 +44,21 @@ class Musico(Artista):
 
     
 def nuevo_artista():
-    nombre = input("¿Qué nombre tiene el artista? ")
-    edad = input("¿Qué edad tiene el artista? ")
-    nombre_profesional = input("¿Qué nombre profesional tiene el artista? ")
-    estilo = input("¿Qué estilo tiene el artista? ")
-    pregunta = input("¿Es músico?: ")
-    if pregunta.lower() == "si":
-        numerocanciones = input("¿Cuántas canciones tiene el músico? ")
-        miMusico = Musico(numerocanciones, nombre, edad, nombre_profesional, estilo)
-        return miMusico
-    else:
-        miArtista = Artista(nombre, edad, nombre_profesional, estilo)
-        return miArtista
-
+    try:
+        nombre = input("¿Qué nombre tiene el artista? ")
+        edad = input("¿Qué edad tiene el artista? ")
+        nombre_profesional = input("¿Qué nombre profesional tiene el artista? ")
+        estilo = input("¿Qué estilo tiene el artista? ")
+        pregunta = input("¿Es músico?: ")
+        if pregunta.lower() == "si":
+            numerocanciones = input("¿Cuántas canciones tiene el músico? ")
+            miMusico = Musico(numerocanciones, nombre, edad, nombre_profesional, estilo)
+            return miMusico
+        else:
+            miArtista = Artista(nombre, edad, nombre_profesional, estilo)
+            return miArtista
+    except ValueError:
+        print("La edad y el número de canciones deben ser números enteros.")
 
 
 def finalizar_programa():
