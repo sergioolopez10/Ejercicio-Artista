@@ -123,16 +123,19 @@ def main():
     lista_artistas = []
 
     while True:
-        P=(input("Si desea añadir un artista:1. Si desea modificar un artista:2. Si desea eliminar un artista:3 Si desea finalizar el programa:4 "))
-        if P=="1":
-            nuevo_artista()
-        if P=="2":
-            modificar_artista(lista_artistas, nombre_artista)
-        if P=="3":
-            eliminar_artista(lista_artistas, nombre_artista)
-        if P=="4":
-            finalizar_programa()
-            break
+        try:
+            P=int(input("Si desea añadir un artista:1. Si desea modificar un artista:2. Si desea eliminar un artista:3 Si desea finalizar el programa:4 "))
+            if P==1:
+                nuevo_artista()
+            if P==2:
+                modificar_artista(lista_artistas, nombre_artista)
+            if P==3:
+                eliminar_artista(lista_artistas, nombre_artista)
+            if P==4:
+                finalizar_programa()
+                break
+        except ValueError:
+            print("Por favor, introduzca un número entre 1 y 4 en función de lo que desee hacer")
 
 
 if __name__=='__main__':
