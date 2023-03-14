@@ -29,3 +29,15 @@ class Artista():
     def get_musica(self):
         return self.__musica
 
+
+class Musico(Artista):
+    def __init__(self, numerocanciones, nombre, edad, nombre_profesional, estilo):
+        self.__numerocanciones=numerocanciones
+        super().__init__(nombre, edad, nombre_profesional, estilo)
+        self.set_musica(True)
+        
+    def set_numerocanciones(self, numerocanciones):
+        self.__numerocanciones=numerocanciones
+    def get_numerocanciones(self):
+        return self.__numerocanciones
+
