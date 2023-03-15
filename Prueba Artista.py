@@ -68,8 +68,16 @@ def nuevo_artista(lista_artistas):
         print("La edad y el número de canciones deben ser números enteros.")
 
 
-def finalizar_programa():
+def finalizar_programa(lista_artistas):
     print("El programa se ha finalizado")
+    print("Lista de artistas:")
+    for artista in lista_artistas:
+        if isinstance(artista, Musico):
+            print(f"Nombre del músico: {artista.get_nombre()}, Edad del músico: {artista.get_edad()}, Nombre profesional del músico: {artista.get_nombre_profesional()}, Estilo del músico: {artista.get_estilo()}, Número de canciones que tiene: {artista.get_numerocanciones()}")
+        else:
+            print(f"Nombre del artista: {artista.get_nombre()}, Edad del artista: {artista.get_edad()}, Nombre profesional del artista: {artista.get_nombre_profesional()}, Estilo del artista: {artista.get_estilo()}")
+    if not lista_artistas:
+        print("No hay artistas en la lista")
 
 def modificar_artista(lista_artistas):
     if not lista_artistas:
@@ -154,7 +162,7 @@ def main():
             if P==3:
                 eliminar_artista(lista_artistas)
             if P==4:
-                finalizar_programa()
+                finalizar_programa(lista_artistas)
                 break
             if P not in [1,2,3,4]:
                 raise ValueError
