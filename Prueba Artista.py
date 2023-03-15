@@ -46,6 +46,9 @@ class Musico(Artista):
 def nuevo_artista(lista_artistas):
     try:
         nombre = input("¿Qué nombre tiene el artista? ")
+        if not nombre.isalpha():
+            print("El nombre sólo puede contener letras")
+            return
         edad = int(input("¿Qué edad tiene el artista? "))
         nombre_profesional = input("¿Qué nombre profesional tiene el artista? ")
         estilo = input("¿Qué estilo tiene el artista? ")
