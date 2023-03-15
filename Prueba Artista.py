@@ -77,8 +77,10 @@ def modificar_artista(lista_artistas):
         return
     
     nombre_artista = input("Ingrese el nombre del artista que desea modificar: ")
+    encontrado=False
     for artista in lista_artistas:
         if artista.get_nombre() == nombre_artista:
+            encontrado=True
             print("Datos actuales del artista:")
             print(f"Nombre: {artista.get_nombre()}")
             print(f"Edad: {artista.get_edad()}")
@@ -111,7 +113,7 @@ def modificar_artista(lista_artistas):
                     print(f"Nombre del músico: {artista.get_nombre()}, Edad del músico: {artista.get_edad()}, Nombre profesional del músico: {artista.get_nombre_profesional()}, Estilo del músico: {artista.get_estilo()}, Número de canciones que tiene: {artista.get_numerocanciones()}")
                 else:
                     print(f"Nombre del artista: {artista.get_nombre()}, Edad del artista: {artista.get_edad()}, Nombre profesional del artista: {artista.get_nombre_profesional()}, Estilo del artista: {artista.get_estilo()}")
-        else:
+        if not encontrado:
             print("No se encontró un artista con ese nombre.")
 
 
@@ -134,6 +136,8 @@ def eliminar_artista(lista_artistas):
                     print(f"Nombre del artista: {artista.get_nombre()}, Edad del artista: {artista.get_edad()}, Nombre profesional del artista: {artista.get_nombre_profesional()}, Estilo del artista: {artista.get_estilo()}")
     if not encontrado: 
         print("No hay ningún artista con ese nombre")
+    if not lista_artistas:
+        print("No hay ningún artista en la lista")
 
 
 
