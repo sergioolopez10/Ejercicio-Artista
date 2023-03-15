@@ -46,12 +46,12 @@ class Musico(Artista):
 def nuevo_artista(lista_artistas):
     try:
         nombre = input("¿Qué nombre tiene el artista? ")
-        edad = input("¿Qué edad tiene el artista? ")
+        edad = int(input("¿Qué edad tiene el artista? "))
         nombre_profesional = input("¿Qué nombre profesional tiene el artista? ")
         estilo = input("¿Qué estilo tiene el artista? ")
         pregunta = input("¿Es músico?: ")
         if pregunta.lower() == "si":
-            numerocanciones = input("¿Cuántas canciones tiene el músico? ")
+            numerocanciones = int(input("¿Cuántas canciones tiene el músico? "))
             miMusico = Musico(numerocanciones, nombre, edad, nombre_profesional, estilo)
             lista_artistas.append(miMusico)
             return miMusico
@@ -149,8 +149,8 @@ def main():
             if P==4:
                 finalizar_programa()
                 break
-            else:
-                print("Por favor, introduza un número entre 1 y 4 en función de lo que desee hacer.")
+            if P not in [1,2,3,4]:
+                raise ValueError
         except ValueError:
             print("Por favor, introduzca un número entre 1 y 4 en función de lo que desee hacer.")
 
