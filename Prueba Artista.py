@@ -134,7 +134,7 @@ def eliminar_artista(lista_artistas):
     for i, artista in enumerate(lista_artistas):
         if artista.get_nombre() == nombre_artista:
             del lista_artistas[i]
-            print("Artista eliminado con éxito.")
+            print("Artista eliminado con éxito")
             print("Lista de artistas actualizada:")
             encontrado=True
             for artista in lista_artistas:
